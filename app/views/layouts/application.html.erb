@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AjaxPostingApp</title>
+    <title>🎩 Ajax Exercise</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,8 @@
   </head>
 
   <body>
+
+    <div class="container-fluid">
 
     <% if flash[:notice] %>
       <%= flash[:notice] %>
@@ -33,5 +35,7 @@
     <%= link_to "jQuery 練習五", jquery_5_path %>
 
     <%= yield %>
+
+    </div>
   </body>
 </html>

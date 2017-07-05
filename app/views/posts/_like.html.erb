@@ -1,0 +1,11 @@
+<% if post.liked_users.any? %>
+  <%= post.liked_users.map{ |u| u.display_name }.join(",") %> 點了贊
+<% end %>
+
+<% if current_user #有登入才可以点赞 %>
+  <% if post.find_like(current_user) %>
+    <%= link_to "取消讃", unlike_post_path(post), :method => :post, :remote => true, :class => "btn btn-primary" %>
+  <% else %>
+    <%= link_to "點讚", like_post_path(post), :method => :post, :remote => true, :class => "btn btn-primary" %>
+  <% end %>
+<% end %>
